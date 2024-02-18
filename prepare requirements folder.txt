@@ -1,0 +1,10 @@
+1. Создать файл requirements.txt
+pip freeze > requirements.txt
+
+2. Скачать все требуемые пакеты в директорию
+pip download --destination-directory ./requirements/ -r requirements.txt
+или (чтобы скачать колеса)
+pip wheel --wheel-dir ./requirements_whl/ -r requirements.txt
+
+3. Установить все пакеты из директории
+pip install --no-index --find-links=./requirements_whl/ -r requirements.txt
